@@ -543,7 +543,7 @@ func expandAllowedMethods(s *schema.Set) *cloudfront.AllowedMethods {
 	}
 }
 
-func flattenAllowedMethods(am *cloudfront.AllowedMethods) *schema.set {
+func flattenAllowedMethods(am *cloudfront.AllowedMethods) *schema.Set {
 	if am.Items != nil {
 		return schema.NewSet(schema.HashString, flattenStringList(am.Items))
 	}
